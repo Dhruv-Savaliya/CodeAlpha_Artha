@@ -1,0 +1,40 @@
+/* Spinner.module.css */
+
+.spinner {
+  display: inline-block;
+  border: 2px solid var(--artha-color-border-default);
+  border-top-color: var(--artha-color-brand);
+  border-radius: var(--artha-radius-full);
+  animation: artha-spin var(--artha-duration-slower) var(--artha-ease-linear) infinite;
+  flex-shrink: 0;
+}
+
+.size-sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.size-md {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+.size-lg {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,134 @@
+/* Input.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1-5);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--artha-color-surface-raised);
+  border: 1px solid var(--artha-color-border-default);
+  border-radius: var(--artha-radius-md);
+  transition:
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard),
+    background-color var(--artha-duration-normal) var(--artha-ease-standard);
+}
+
+.wrapper:focus-within {
+  border-color: var(--artha-color-border-focus);
+  box-shadow: var(--artha-shadow-focus);
+  background-color: var(--artha-color-surface-base);
+}
+
+.wrapper:hover:not(:focus-within) {
+  border-color: var(--artha-color-border-strong);
+}
+
+/* Sizes */
+.size-sm { height: 32px; }
+.size-md { height: 40px; }
+.size-lg { height: 48px; }
+
+/* Statuses */
+.status-error {
+  border-color: var(--artha-color-danger);
+}
+.status-error:focus-within {
+  border-color: var(--artha-color-danger);
+  box-shadow:
+    0 0 0 2px var(--artha-color-bg-base),
+    0 0 0 4px var(--artha-color-danger);
+}
+
+.status-success {
+  border-color: var(--artha-color-success);
+}
+.status-success:focus-within {
+  border-color: var(--artha-color-success);
+  box-shadow:
+    0 0 0 2px var(--artha-color-bg-base),
+    0 0 0 4px var(--artha-color-success);
+}
+
+/* Input element */
+.input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--artha-color-text-primary);
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-body-sm);
+  font-weight: var(--artha-font-weight-regular);
+  padding: 0 var(--artha-space-4);
+  height: 100%;
+  caret-color: var(--artha-color-brand);
+}
+
+.size-sm .input { font-size: var(--artha-text-body-xs); padding: 0 var(--artha-space-3); }
+.size-lg .input { font-size: var(--artha-text-body-md); }
+
+.input::placeholder {
+  color: var(--artha-color-text-tertiary);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  color: var(--artha-color-text-disabled);
+}
+
+.wrapper:has(.input:disabled) {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Icon and affix slots */
+.iconLeft,
+.iconRight {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--artha-color-text-tertiary);
+}
+
+.iconLeft { padding-left: var(--artha-space-3); }
+.iconLeft + .input { padding-left: var(--artha-space-2); }
+
+.iconRight { padding-right: var(--artha-space-3); }
+
+.prefix,
+.suffix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: var(--artha-text-body-sm);
+  font-family: var(--artha-font-sans);
+  color: var(--artha-color-text-tertiary);
+  padding: 0 var(--artha-space-3);
+  border-right: 1px solid var(--artha-color-border-default);
+  height: 100%;
+  background-color: var(--artha-color-surface-overlay);
+}
+
+.prefix { border-radius: var(--artha-radius-md) 0 0 var(--artha-radius-md); }
+
+.suffix {
+  border-right: none;
+  border-left: 1px solid var(--artha-color-border-default);
+  border-radius: 0 var(--artha-radius-md) var(--artha-radius-md) 0;
+}
+
+/* Error message */
+.errorMessage {
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-danger-text);
+  margin: 0;
+  line-height: var(--artha-leading-normal);
+}

@@ -1,0 +1,547 @@
+/**
+ * Artha Design Tokens
+ * ─────────────────────────────────────────────────────────────────────────────
+ * All CSS custom properties for the Artha design system.
+ * Source of truth: docs/07_Design_Spec.md
+ *
+ * Naming convention: --artha-[category]-[variant]-[modifier]
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 1 — RAW PALETTE
+   Never reference palette values directly in components.
+   Use semantic aliases (Section 4) instead.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Neutral — Zinc-based cool grays */
+  --artha-palette-neutral-0:    #ffffff;
+  --artha-palette-neutral-50:   #fafafa;
+  --artha-palette-neutral-100:  #f4f4f5;
+  --artha-palette-neutral-150:  #ececed;
+  --artha-palette-neutral-200:  #e4e4e7;
+  --artha-palette-neutral-300:  #d1d1d6;
+  --artha-palette-neutral-400:  #a1a1aa;
+  --artha-palette-neutral-500:  #71717a;
+  --artha-palette-neutral-600:  #52525b;
+  --artha-palette-neutral-700:  #3f3f46;
+  --artha-palette-neutral-750:  #323238;
+  --artha-palette-neutral-800:  #27272a;
+  --artha-palette-neutral-850:  #1f1f22;
+  --artha-palette-neutral-900:  #18181b;
+  --artha-palette-neutral-925:  #121215;
+  --artha-palette-neutral-950:  #09090b;
+  --artha-palette-neutral-1000: #000000;
+
+  /* Brand — Artha Indigo (trust, premium, Indian fintech) */
+  --artha-palette-brand-50:  #eef2ff;
+  --artha-palette-brand-100: #e0e7ff;
+  --artha-palette-brand-200: #c7d2fe;
+  --artha-palette-brand-300: #a5b4fc;
+  --artha-palette-brand-400: #818cf8;
+  --artha-palette-brand-500: #6366f1;
+  --artha-palette-brand-600: #4f46e5;
+  --artha-palette-brand-700: #4338ca;
+  --artha-palette-brand-800: #3730a3;
+  --artha-palette-brand-900: #312e81;
+  --artha-palette-brand-950: #1e1b4b;
+
+  /* Accent — Violet (secondary highlights) */
+  --artha-palette-accent-300: #c4b5fd;
+  --artha-palette-accent-400: #a78bfa;
+  --artha-palette-accent-500: #8b5cf6;
+  --artha-palette-accent-600: #7c3aed;
+
+  /* Success — Wealth growth, positive deltas */
+  --artha-palette-success-50:  #f0fdf4;
+  --artha-palette-success-400: #4ade80;
+  --artha-palette-success-500: #22c55e;
+  --artha-palette-success-600: #16a34a;
+  --artha-palette-success-900: #14532d;
+
+  /* Warning — Budget alerts, attention needed */
+  --artha-palette-warning-50:  #fffbeb;
+  --artha-palette-warning-400: #fbbf24;
+  --artha-palette-warning-500: #f59e0b;
+  --artha-palette-warning-600: #d97706;
+  --artha-palette-warning-900: #78350f;
+
+  /* Danger — Overspend, critical alerts */
+  --artha-palette-danger-50:  #fff1f2;
+  --artha-palette-danger-400: #fb7185;
+  --artha-palette-danger-500: #f43f5e;
+  --artha-palette-danger-600: #e11d48;
+  --artha-palette-danger-900: #881337;
+
+  /* Info — Neutral informational */
+  --artha-palette-info-400: #60a5fa;
+  --artha-palette-info-500: #3b82f6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 2 — TYPOGRAPHY TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Font families */
+  --artha-font-sans:  'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --artha-font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Font weights */
+  --artha-font-weight-regular:   400;
+  --artha-font-weight-medium:    500;
+  --artha-font-weight-semibold:  600;
+  --artha-font-weight-bold:      700;
+  --artha-font-weight-extrabold: 800;
+
+  /* Type scale — Display (hero headings, splash) */
+  --artha-text-display-2xl: 4.5rem;   /* 72px */
+  --artha-text-display-xl:  3.75rem;  /* 60px */
+  --artha-text-display-lg:  3rem;     /* 48px */
+
+  /* Type scale — Heading (section and card titles) */
+  --artha-text-heading-xl:  2.25rem;  /* 36px */
+  --artha-text-heading-lg:  1.875rem; /* 30px */
+  --artha-text-heading-md:  1.5rem;   /* 24px */
+  --artha-text-heading-sm:  1.25rem;  /* 20px */
+  --artha-text-heading-xs:  1.125rem; /* 18px */
+
+  /* Type scale — Body (content and labels) */
+  --artha-text-body-lg: 1rem;        /* 16px */
+  --artha-text-body-md: 0.9375rem;   /* 15px */
+  --artha-text-body-sm: 0.875rem;    /* 14px */
+  --artha-text-body-xs: 0.8125rem;   /* 13px */
+
+  /* Type scale — Label (form labels, table headers, badges) */
+  --artha-text-label-lg: 0.875rem;   /* 14px */
+  --artha-text-label-md: 0.8125rem;  /* 13px */
+  --artha-text-label-sm: 0.75rem;    /* 12px */
+  --artha-text-label-xs: 0.6875rem;  /* 11px */
+
+  /* Type scale — Numeric (financial figures, amounts) */
+  --artha-text-numeric-2xl: 3rem;      /* 48px */
+  --artha-text-numeric-xl:  2.25rem;   /* 36px */
+  --artha-text-numeric-lg:  1.5rem;    /* 24px */
+  --artha-text-numeric-md:  1.125rem;  /* 18px */
+  --artha-text-numeric-sm:  0.9375rem; /* 15px */
+  --artha-text-numeric-xs:  0.8125rem; /* 13px */
+
+  /* Line heights */
+  --artha-leading-none:    1;
+  --artha-leading-tight:   1.15;
+  --artha-leading-snug:    1.25;
+  --artha-leading-normal:  1.5;
+  --artha-leading-relaxed: 1.6;
+  --artha-leading-loose:   2;
+
+  /* Letter spacing */
+  --artha-tracking-tight:  -0.02em;
+  --artha-tracking-normal:  0;
+  --artha-tracking-wide:    0.02em;
+  --artha-tracking-wider:   0.03em;
+  --artha-tracking-widest:  0.04em;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 3 — SPACING SCALE (8px base grid)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-space-0:    0px;
+  --artha-space-px:   1px;
+  --artha-space-0-5:  2px;
+  --artha-space-1:    4px;
+  --artha-space-1-5:  6px;
+  --artha-space-2:    8px;
+  --artha-space-2-5:  10px;
+  --artha-space-3:    12px;
+  --artha-space-3-5:  14px;
+  --artha-space-4:    16px;
+  --artha-space-5:    20px;
+  --artha-space-6:    24px;
+  --artha-space-7:    28px;
+  --artha-space-8:    32px;
+  --artha-space-9:    36px;
+  --artha-space-10:   40px;
+  --artha-space-12:   48px;
+  --artha-space-14:   56px;
+  --artha-space-16:   64px;
+  --artha-space-20:   80px;
+  --artha-space-24:   96px;
+  --artha-space-32:   128px;
+  --artha-space-40:   160px;
+  --artha-space-48:   192px;
+  --artha-space-64:   256px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 4 — SEMANTIC COLOR ALIASES
+
+   Dark theme (default per spec — dark-first design system)
+   Override with [data-theme="light"] for light mode.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --artha-color-bg-base:    var(--artha-palette-neutral-950);
+  --artha-color-bg-subtle:  var(--artha-palette-neutral-925);
+  --artha-color-bg-inset:   var(--artha-palette-neutral-900);
+
+  /* Surfaces */
+  --artha-color-surface-base:      var(--artha-palette-neutral-900);
+  --artha-color-surface-raised:    var(--artha-palette-neutral-850);
+  --artha-color-surface-overlay:   var(--artha-palette-neutral-800);
+  --artha-color-surface-highlight: rgba(255, 255, 255, 0.03);
+
+  /* Borders */
+  --artha-color-border-subtle:  rgba(255, 255, 255, 0.06);
+  --artha-color-border-default: rgba(255, 255, 255, 0.10);
+  --artha-color-border-strong:  rgba(255, 255, 255, 0.18);
+  --artha-color-border-focus:   var(--artha-palette-brand-500);
+
+  /* Text */
+  --artha-color-text-primary:   var(--artha-palette-neutral-50);
+  --artha-color-text-secondary: var(--artha-palette-neutral-400);
+  --artha-color-text-tertiary:  var(--artha-palette-neutral-500);
+  --artha-color-text-disabled:  var(--artha-palette-neutral-600);
+  --artha-color-text-inverse:   var(--artha-palette-neutral-950);
+  --artha-color-text-on-brand:  var(--artha-palette-neutral-0);
+
+  /* Brand / Interactive */
+  --artha-color-brand:         var(--artha-palette-brand-500);
+  --artha-color-brand-hover:   var(--artha-palette-brand-400);
+  --artha-color-brand-subtle:  rgba(99, 102, 241, 0.12);
+  --artha-color-brand-glow:    rgba(99, 102, 241, 0.20);
+
+  /* Status — Success */
+  --artha-color-success:        var(--artha-palette-success-500);
+  --artha-color-success-subtle: rgba(34, 197, 94, 0.12);
+  --artha-color-success-text:   var(--artha-palette-success-400);
+
+  /* Status — Warning */
+  --artha-color-warning:        var(--artha-palette-warning-500);
+  --artha-color-warning-subtle: rgba(245, 158, 11, 0.12);
+  --artha-color-warning-text:   var(--artha-palette-warning-400);
+
+  /* Status — Danger */
+  --artha-color-danger:         var(--artha-palette-danger-500);
+  --artha-color-danger-subtle:  rgba(244, 63, 94, 0.12);
+  --artha-color-danger-text:    var(--artha-palette-danger-400);
+
+  /* Status — Info */
+  --artha-color-info:         var(--artha-palette-info-500);
+  --artha-color-info-subtle:  rgba(59, 130, 246, 0.12);
+  --artha-color-info-text:    var(--artha-palette-info-400);
+
+  /* Sidebar */
+  --artha-color-sidebar-bg:              var(--artha-palette-neutral-950);
+  --artha-color-sidebar-border:          rgba(255, 255, 255, 0.06);
+  --artha-color-sidebar-item-active-bg:  rgba(99, 102, 241, 0.14);
+  --artha-color-sidebar-item-hover-bg:   rgba(255, 255, 255, 0.04);
+
+  /* Charts */
+  --artha-chart-1: #6366f1;
+  --artha-chart-2: #8b5cf6;
+  --artha-chart-3: #22c55e;
+  --artha-chart-4: #f59e0b;
+  --artha-chart-5: #3b82f6;
+  --artha-chart-6: #f43f5e;
+  --artha-chart-7: #06b6d4;
+  --artha-chart-8: #a78bfa;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Backgrounds */
+  --artha-color-bg-base:    var(--artha-palette-neutral-50);
+  --artha-color-bg-subtle:  var(--artha-palette-neutral-100);
+  --artha-color-bg-inset:   var(--artha-palette-neutral-150);
+
+  /* Surfaces */
+  --artha-color-surface-base:      var(--artha-palette-neutral-0);
+  --artha-color-surface-raised:    var(--artha-palette-neutral-50);
+  --artha-color-surface-overlay:   var(--artha-palette-neutral-100);
+  --artha-color-surface-highlight: rgba(0, 0, 0, 0.02);
+
+  /* Borders */
+  --artha-color-border-subtle:  rgba(0, 0, 0, 0.05);
+  --artha-color-border-default: rgba(0, 0, 0, 0.09);
+  --artha-color-border-strong:  rgba(0, 0, 0, 0.16);
+  --artha-color-border-focus:   var(--artha-palette-brand-600);
+
+  /* Text */
+  --artha-color-text-primary:   var(--artha-palette-neutral-950);
+  --artha-color-text-secondary: var(--artha-palette-neutral-500);
+  --artha-color-text-tertiary:  var(--artha-palette-neutral-400);
+  --artha-color-text-disabled:  var(--artha-palette-neutral-300);
+  --artha-color-text-inverse:   var(--artha-palette-neutral-50);
+  --artha-color-text-on-brand:  var(--artha-palette-neutral-0);
+
+  /* Brand / Interactive */
+  --artha-color-brand:         var(--artha-palette-brand-600);
+  --artha-color-brand-hover:   var(--artha-palette-brand-700);
+  --artha-color-brand-subtle:  rgba(79, 70, 229, 0.08);
+  --artha-color-brand-glow:    rgba(79, 70, 229, 0.15);
+
+  /* Status — Success */
+  --artha-color-success:        var(--artha-palette-success-600);
+  --artha-color-success-subtle: rgba(22, 163, 74, 0.10);
+  --artha-color-success-text:   var(--artha-palette-success-600);
+
+  /* Status — Warning */
+  --artha-color-warning:        var(--artha-palette-warning-600);
+  --artha-color-warning-subtle: rgba(217, 119, 6, 0.10);
+  --artha-color-warning-text:   var(--artha-palette-warning-600);
+
+  /* Status — Danger */
+  --artha-color-danger:         var(--artha-palette-danger-600);
+  --artha-color-danger-subtle:  rgba(225, 29, 72, 0.10);
+  --artha-color-danger-text:    var(--artha-palette-danger-600);
+
+  /* Status — Info */
+  --artha-color-info:         var(--artha-palette-info-500);
+  --artha-color-info-subtle:  rgba(59, 130, 246, 0.10);
+  --artha-color-info-text:    var(--artha-palette-info-500);
+
+  /* Sidebar */
+  --artha-color-sidebar-bg:              var(--artha-palette-neutral-50);
+  --artha-color-sidebar-border:          rgba(0, 0, 0, 0.07);
+  --artha-color-sidebar-item-active-bg:  rgba(79, 70, 229, 0.10);
+  --artha-color-sidebar-item-hover-bg:   rgba(0, 0, 0, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 5 — ELEVATION & SHADOWS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-shadow-none: none;
+
+  --artha-shadow-xs:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+
+  --artha-shadow-sm:
+    0 1px 3px rgba(0, 0, 0, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+
+  --artha-shadow-md:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+
+  --artha-shadow-lg:
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+
+  --artha-shadow-xl:
+    0 16px 48px rgba(0, 0, 0, 0.7),
+    0 8px 16px rgba(0, 0, 0, 0.5);
+
+  --artha-shadow-brand-glow:
+    0 0 0 3px rgba(99, 102, 241, 0.25),
+    0 4px 16px rgba(99, 102, 241, 0.20);
+
+  --artha-shadow-focus:
+    0 0 0 2px var(--artha-color-bg-base),
+    0 0 0 4px var(--artha-color-brand);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 6 — BORDER RADIUS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-radius-none: 0px;
+  --artha-radius-xs:   2px;
+  --artha-radius-sm:   4px;
+  --artha-radius-md:   8px;
+  --artha-radius-lg:   12px;
+  --artha-radius-xl:   16px;
+  --artha-radius-2xl:  20px;
+  --artha-radius-3xl:  24px;
+  --artha-radius-full: 9999px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 7 — MOTION / ANIMATION TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Easing functions */
+  --artha-ease-standard:   cubic-bezier(0.4, 0.0, 0.2, 1);
+  --artha-ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --artha-ease-accelerate: cubic-bezier(0.4, 0.0, 1.0, 1);
+  --artha-ease-overshoot:  cubic-bezier(0.34, 1.4, 0.64, 1);
+  --artha-ease-linear:     linear;
+
+  /* Duration scale */
+  --artha-duration-instant:  0ms;
+  --artha-duration-fast:     80ms;
+  --artha-duration-normal:   150ms;
+  --artha-duration-moderate: 200ms;
+  --artha-duration-slow:     300ms;
+  --artha-duration-slower:   400ms;
+  --artha-duration-slowest:  600ms;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 8 — Z-INDEX SCALE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-z-below:    -1;
+  --artha-z-base:      0;
+  --artha-z-raised:    10;
+  --artha-z-dropdown:  100;
+  --artha-z-sticky:    200;
+  --artha-z-overlay:   300;
+  --artha-z-modal:     400;
+  --artha-z-popover:   500;
+  --artha-z-toast:     600;
+  --artha-z-tooltip:   700;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 9 — OPACITY SCALE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-opacity-0:    0;
+  --artha-opacity-5:    0.05;
+  --artha-opacity-10:   0.10;
+  --artha-opacity-20:   0.20;
+  --artha-opacity-30:   0.30;
+  --artha-opacity-40:   0.40;
+  --artha-opacity-50:   0.50;
+  --artha-opacity-60:   0.60;
+  --artha-opacity-70:   0.70;
+  --artha-opacity-80:   0.80;
+  --artha-opacity-90:   0.90;
+  --artha-opacity-100:  1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 10 — BLUR SCALE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --artha-blur-none: 0;
+  --artha-blur-xs:   2px;
+  --artha-blur-sm:   4px;
+  --artha-blur-md:   8px;
+  --artha-blur-lg:   16px;
+  --artha-blur-xl:   24px;
+  --artha-blur-2xl:  40px;
+  --artha-blur-3xl:  64px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 11 — KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes artha-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes artha-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes artha-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes artha-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes artha-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes artha-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes artha-blur-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes artha-skeleton-pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 0.7; }
+}
+
+@keyframes artha-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes artha-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.10);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION 12 — REDUCED MOTION
+   Honour system preference — no animation for users who need it.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

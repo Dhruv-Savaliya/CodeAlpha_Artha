@@ -1,0 +1,27 @@
+/* Label.module.css */
+
+.label {
+  display: inline-block;
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-primary);
+  line-height: var(--artha-leading-snug);
+  cursor: default;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.required {
+  color: var(--artha-color-danger);
+  margin-left: var(--artha-space-1);
+}
+
+.optional {
+  color: var(--artha-color-text-tertiary);
+  margin-left: var(--artha-space-2);
+  font-weight: var(--artha-font-weight-regular);
+}

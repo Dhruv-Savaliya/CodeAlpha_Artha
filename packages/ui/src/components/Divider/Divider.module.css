@@ -1,0 +1,19 @@
+/* Divider.module.css */
+
+.divider {
+  border: none;
+  background-color: var(--artha-color-border-default);
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.orientation-horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.orientation-vertical {
+  height: 100%;
+  width: 1px;
+}

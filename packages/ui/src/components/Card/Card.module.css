@@ -1,0 +1,49 @@
+/* Card.module.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--artha-color-surface-base);
+  border-radius: var(--artha-radius-xl);
+  padding: var(--artha-space-6);
+  color: var(--artha-color-text-primary);
+  font-family: var(--artha-font-sans);
+}
+
+.variant-flat {
+  background-color: var(--artha-color-bg-subtle);
+  border: none;
+  box-shadow: none;
+}
+
+.variant-bordered {
+  border: 1px solid var(--artha-color-border-default);
+  box-shadow: none;
+}
+
+.variant-elevated {
+  background-color: var(--artha-color-surface-raised);
+  border: 1px solid var(--artha-color-border-subtle);
+  box-shadow: var(--artha-shadow-sm);
+}
+
+.variant-interactive {
+  border: 1px solid var(--artha-color-border-default);
+  box-shadow: var(--artha-shadow-sm);
+  transition:
+    transform var(--artha-duration-moderate) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-moderate) var(--artha-ease-standard),
+    border-color var(--artha-duration-moderate) var(--artha-ease-standard);
+  cursor: pointer;
+}
+
+.variant-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--artha-shadow-md);
+  border-color: var(--artha-color-border-strong);
+}
+
+.variant-interactive:active {
+  transform: translateY(0);
+  box-shadow: var(--artha-shadow-sm);
+}

@@ -1,0 +1,215 @@
+/* Button.module.css — all values from design tokens */
+
+.button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--artha-space-2);
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  /* Shape */
+  border-radius: var(--artha-radius-md);
+  border: 1px solid transparent;
+
+  /* Typography */
+  font-family: var(--artha-font-sans);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-normal);
+  text-decoration: none;
+  cursor: pointer;
+
+  /* Transition */
+  transition:
+    background-color var(--artha-duration-normal) var(--artha-ease-standard),
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard),
+    opacity var(--artha-duration-normal) var(--artha-ease-standard),
+    transform var(--artha-duration-fast) var(--artha-ease-standard);
+
+  /* Remove default browser button styles */
+  -webkit-appearance: none;
+  appearance: none;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Focus ring — keyboard accessibility */
+.button:focus-visible {
+  box-shadow: var(--artha-shadow-focus);
+}
+
+/* Hover lift — very subtle, performance-safe */
+.button:not(:disabled):not(.loading):hover {
+  transform: translateY(-1px);
+}
+
+.button:not(:disabled):not(.loading):active {
+  transform: translateY(0);
+}
+
+/* Disabled state */
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+/* ── SIZES ─────────────────────────────────────────────────────────────── */
+
+.size-sm {
+  height: 32px;
+  padding: 0 var(--artha-space-3);
+  font-size: var(--artha-text-body-xs);
+  border-radius: var(--artha-radius-sm);
+}
+
+.size-md {
+  height: 40px;
+  padding: 0 var(--artha-space-5);
+  font-size: var(--artha-text-body-sm);
+}
+
+.size-lg {
+  height: 48px;
+  padding: 0 var(--artha-space-6);
+  font-size: var(--artha-text-body-md);
+  border-radius: var(--artha-radius-lg);
+}
+
+/* ── VARIANTS ───────────────────────────────────────────────────────────── */
+
+/* Primary — brand-filled */
+.variant-primary {
+  background-color: var(--artha-color-brand);
+  border-color: var(--artha-color-brand);
+  color: var(--artha-color-text-on-brand);
+}
+
+.variant-primary:not(:disabled):not(.loading):hover {
+  background-color: var(--artha-color-brand-hover);
+  border-color: var(--artha-color-brand-hover);
+  box-shadow: var(--artha-shadow-brand-glow);
+}
+
+/* Secondary — surface-raised with border */
+.variant-secondary {
+  background-color: var(--artha-color-surface-raised);
+  border-color: var(--artha-color-border-default);
+  color: var(--artha-color-text-primary);
+}
+
+.variant-secondary:not(:disabled):not(.loading):hover {
+  background-color: var(--artha-color-surface-overlay);
+  border-color: var(--artha-color-border-strong);
+}
+
+/* Ghost — fully transparent */
+.variant-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--artha-color-text-secondary);
+}
+
+.variant-ghost:not(:disabled):not(.loading):hover {
+  background-color: var(--artha-color-surface-highlight);
+  color: var(--artha-color-text-primary);
+}
+
+/* Destructive — danger filled */
+.variant-destructive {
+  background-color: var(--artha-color-danger-subtle);
+  border-color: var(--artha-color-danger);
+  color: var(--artha-color-danger-text);
+}
+
+.variant-destructive:not(:disabled):not(.loading):hover {
+  background-color: var(--artha-color-danger);
+  color: var(--artha-color-text-on-brand);
+}
+
+/* Link — text-only, no background */
+.variant-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--artha-color-brand);
+  padding-left: 0;
+  padding-right: 0;
+  height: auto;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.variant-link:not(:disabled):not(.loading):hover {
+  text-decoration-color: var(--artha-color-brand-hover);
+  color: var(--artha-color-brand-hover);
+  transform: none;
+}
+
+/* Icon — square, no label padding */
+.variant-icon {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--artha-color-text-secondary);
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+.variant-icon.size-sm { width: 32px; }
+.variant-icon.size-md { width: 40px; }
+.variant-icon.size-lg { width: 48px; }
+
+.variant-icon:not(:disabled):not(.loading):hover {
+  background-color: var(--artha-color-surface-highlight);
+  color: var(--artha-color-text-primary);
+  transform: none;
+}
+
+/* ── LOADING STATE ──────────────────────────────────────────────────────── */
+
+.loading {
+  pointer-events: none;
+}
+
+.spinnerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--artha-radius-full);
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: artha-spin var(--artha-duration-slower) var(--artha-ease-linear) infinite;
+  flex-shrink: 0;
+}
+
+.size-lg .spinner {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── ICON SLOTS ─────────────────────────────────────────────────────────── */
+
+.iconLeft,
+.iconRight {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}

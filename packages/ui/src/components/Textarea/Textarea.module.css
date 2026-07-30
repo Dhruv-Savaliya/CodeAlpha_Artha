@@ -1,0 +1,65 @@
+/* Textarea.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1-5);
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 96px;
+  padding: var(--artha-space-3) var(--artha-space-4);
+  background-color: var(--artha-color-surface-raised);
+  border: 1px solid var(--artha-color-border-default);
+  border-radius: var(--artha-radius-md);
+  color: var(--artha-color-text-primary);
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-body-sm);
+  font-weight: var(--artha-font-weight-regular);
+  line-height: var(--artha-leading-relaxed);
+  resize: vertical;
+  outline: none;
+  caret-color: var(--artha-color-brand);
+  transition:
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard);
+}
+
+.textarea::placeholder {
+  color: var(--artha-color-text-tertiary);
+}
+
+.textarea:focus {
+  border-color: var(--artha-color-border-focus);
+  box-shadow: var(--artha-shadow-focus);
+  background-color: var(--artha-color-surface-base);
+}
+
+.textarea:hover:not(:focus) {
+  border-color: var(--artha-color-border-strong);
+}
+
+.textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.status-error {
+  border-color: var(--artha-color-danger);
+}
+
+.status-error:focus {
+  border-color: var(--artha-color-danger);
+  box-shadow:
+    0 0 0 2px var(--artha-color-bg-base),
+    0 0 0 4px var(--artha-color-danger);
+}
+
+.errorMessage {
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-danger-text);
+  margin: 0;
+}

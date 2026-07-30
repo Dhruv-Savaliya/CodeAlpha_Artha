@@ -1,0 +1,26 @@
+/* Skeleton.module.css */
+
+.skeleton {
+  background-color: var(--artha-color-surface-overlay);
+  animation: artha-skeleton-pulse 1.5s ease-in-out infinite alternate;
+}
+
+.variant-text {
+  height: 1.2em;
+  border-radius: var(--artha-radius-sm);
+  width: 100%;
+}
+
+.variant-circular {
+  border-radius: var(--artha-radius-full);
+}
+
+.variant-rectangular {
+  border-radius: var(--artha-radius-md);
+}
+
+.variant-card {
+  border-radius: var(--artha-radius-xl);
+  height: 200px;
+  width: 100%;
+}

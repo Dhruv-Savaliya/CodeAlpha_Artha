@@ -1,0 +1,20 @@
+/* Logo.module.css */
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--artha-space-3);
+  user-select: none;
+}
+
+.mark {
+  flex-shrink: 0;
+}
+
+.text {
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-heading-sm);
+  font-weight: var(--artha-font-weight-bold);
+  color: var(--artha-color-text-primary);
+  letter-spacing: var(--artha-tracking-tight);
+}

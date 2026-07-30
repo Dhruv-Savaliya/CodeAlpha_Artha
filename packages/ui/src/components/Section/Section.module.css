@@ -1,0 +1,25 @@
+/* Section.module.css */
+
+.section {
+  width: 100%;
+}
+
+.spacing-sm {
+  padding-top: var(--artha-space-8);
+  padding-bottom: var(--artha-space-8);
+}
+
+.spacing-md {
+  padding-top: var(--artha-space-12);
+  padding-bottom: var(--artha-space-12);
+}
+
+.spacing-lg {
+  padding-top: var(--artha-space-16);
+  padding-bottom: var(--artha-space-16);
+}
+
+.spacing-xl {
+  padding-top: var(--artha-space-24);
+  padding-bottom: var(--artha-space-24);
+}
