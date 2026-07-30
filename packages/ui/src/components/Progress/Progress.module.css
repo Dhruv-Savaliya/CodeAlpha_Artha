@@ -1,0 +1,88 @@
+/*
+ * Progress.module.css
+ */
+
+.root {
+  display: inline-flex;
+}
+
+/* ── Linear ─────────────────────────────────────────────────────────────── */
+
+.variant-linear {
+  width: 100%;
+}
+
+.variant-linear .track {
+  width: 100%;
+  background: var(--artha-color-surface-overlay);
+  border-radius: var(--artha-radius-xs);
+  overflow: hidden;
+  position: relative;
+}
+
+.variant-linear.size-sm .track { height: 4px; }
+.variant-linear.size-md .track { height: 8px; }
+.variant-linear.size-lg .track { height: 12px; }
+
+.variant-linear .fill {
+  height: 100%;
+  background: var(--artha-color-brand);
+  border-radius: var(--artha-radius-xs);
+  transition: width var(--artha-duration-slowest) var(--artha-ease-decelerate);
+}
+
+.variant-linear.indeterminate .fill {
+  width: 50%;
+  animation: artha-progress-indeterminate-linear 1.5s var(--artha-ease-standard) infinite;
+}
+
+@keyframes artha-progress-indeterminate-linear {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ── Circular ───────────────────────────────────────────────────────────── */
+
+.variant-circular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  transform: rotate(-90deg);
+}
+
+.circleBg {
+  stroke: var(--artha-color-surface-overlay);
+}
+
+.circleFg {
+  stroke: var(--artha-color-brand);
+  transition: stroke-dashoffset var(--artha-duration-slowest) var(--artha-ease-decelerate);
+}
+
+.variant-circular.indeterminate .svg {
+  animation: artha-spin 2s linear infinite;
+}
+
+.variant-circular.indeterminate .circleFg {
+  stroke-dasharray: 80, 200;
+  stroke-dashoffset: 0;
+  animation: artha-progress-indeterminate-circular 1.5s ease-in-out infinite;
+}
+
+@keyframes artha-progress-indeterminate-circular {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}

@@ -1,0 +1,79 @@
+/*
+ * Tabs.module.css
+ */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2);
+  border-bottom: 1px solid var(--artha-color-border-subtle);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: var(--artha-space-1);
+}
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--artha-space-2) var(--artha-space-4);
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-secondary);
+  border-radius: var(--artha-radius-md);
+  white-space: nowrap;
+  transition:
+    color var(--artha-duration-fast) var(--artha-ease-standard),
+    background var(--artha-duration-fast) var(--artha-ease-standard);
+  position: relative;
+}
+
+.trigger:hover {
+  color: var(--artha-color-text-primary);
+  background: var(--artha-color-surface-highlight);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--artha-color-brand);
+  outline-offset: -2px;
+}
+
+.triggerActive {
+  color: var(--artha-color-text-primary);
+}
+
+/* Underline indicator for active tab */
+.triggerActive::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--artha-space-1) * -1 - 1px);
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--artha-color-brand);
+  border-radius: var(--artha-radius-full);
+}
+
+.content {
+  padding-top: var(--artha-space-4);
+  outline: none;
+}
+
+.content:focus-visible {
+  box-shadow: var(--artha-shadow-focus);
+  border-radius: var(--artha-radius-md);
+}

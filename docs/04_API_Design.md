@@ -17,7 +17,7 @@
 | Environment | URL |
 |---|---|
 | Development | `http://localhost:4000/api/v1` |
-| Production | `https://api.artha.app/api/v1` (placeholder) |
+| Production | `https://api.artha.coffee/api/v1` (placeholder) |
 
 Port and domain are subject to infrastructure tickets.
 
@@ -66,7 +66,7 @@ Port and domain are subject to infrastructure tickets.
 | `401` | Missing or invalid authentication |
 | `403` | Authenticated but not authorized |
 | `404` | Resource not found |
-| `409` | Conflict (e.g., duplicate email) |
+| `409` | Conflict (e.g., duplicate product SKU) |
 | `500` | Internal server error |
 
 ## Planned Endpoints (Draft)
@@ -80,34 +80,63 @@ Port and domain are subject to infrastructure tickets.
 | `POST` | `/auth/logout` | Invalidate session | Required |
 | `GET` | `/auth/me` | Get current user profile | Required |
 
-### Accounts
+### Products
 
 | Method | Path | Description | Auth |
 |---|---|---|---|
-| `GET` | `/accounts` | List user accounts | Required |
-| `POST` | `/accounts` | Create an account | Required |
-| `GET` | `/accounts/:id` | Get account details | Required |
-| `PATCH` | `/accounts/:id` | Update an account | Required |
-| `DELETE` | `/accounts/:id` | Delete an account | Required |
-
-### Transactions
-
-| Method | Path | Description | Auth |
-|---|---|---|---|
-| `GET` | `/transactions` | List transactions (filterable) | Required |
-| `POST` | `/transactions` | Create a transaction | Required |
-| `GET` | `/transactions/:id` | Get transaction details | Required |
-| `PATCH` | `/transactions/:id` | Update a transaction | Required |
-| `DELETE` | `/transactions/:id` | Delete a transaction | Required |
+| `GET` | `/products` | List products (filterable/sortable) | Public |
+| `POST` | `/products` | Create a product | Required (Admin) |
+| `GET` | `/products/:id` | Get product details | Public |
+| `PATCH` | `/products/:id` | Update product details | Required (Admin) |
+| `DELETE` | `/products/:id` | Delete a product | Required (Admin) |
 
 ### Categories
 
 | Method | Path | Description | Auth |
 |---|---|---|---|
-| `GET` | `/categories` | List user categories | Required |
-| `POST` | `/categories` | Create a category | Required |
-| `PATCH` | `/categories/:id` | Update a category | Required |
-| `DELETE` | `/categories/:id` | Delete a category | Required |
+| `GET` | `/categories` | List product categories | Public |
+| `POST` | `/categories` | Create a category | Required (Admin) |
+| `PATCH` | `/categories/:id` | Update a category | Required (Admin) |
+| `DELETE` | `/categories/:id` | Delete a category | Required (Admin) |
+
+### Cart
+
+| Method | Path | Description | Auth |
+|---|---|---|---|
+| `GET` | `/cart` | Get active shopping cart | Public/Required |
+| `POST` | `/cart` | Add product item to cart | Public/Required |
+| `PATCH` | `/cart/:id` | Update quantity of a cart item | Public/Required |
+| `DELETE` | `/cart/:id` | Remove item from cart | Public/Required |
+
+### Orders
+
+| Method | Path | Description | Auth |
+|---|---|---|---|
+| `GET` | `/orders` | List order history | Required |
+| `POST` | `/orders` | Place a new order | Required |
+| `GET` | `/orders/:id` | Get order details | Required |
+| `PATCH` | `/orders/:id` | Update order status | Required (Admin) |
+
+### Recommendations
+
+| Method | Path | Description | Auth |
+|---|---|---|---|
+| `GET` | `/recommendations` | Get personalized coffee selections | Public/Required |
+
+### Reviews
+
+| Method | Path | Description | Auth |
+|---|---|---|---|
+| `GET` | `/products/:id/reviews` | List product reviews | Public |
+| `POST` | `/products/:id/reviews` | Add a product review | Required |
+| `DELETE` | `/reviews/:id` | Delete a product review | Required |
+
+### Payments
+
+| Method | Path | Description | Auth |
+|---|---|---|---|
+| `POST` | `/payments/checkout` | Initialize payment flow | Required |
+| `POST` | `/payments/webhook` | Process payment gateway notifications | Public |
 
 ## Pagination (Planned)
 

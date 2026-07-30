@@ -29,81 +29,135 @@ Artha development follows a phased, ticket-driven roadmap. Each phase delivers a
 
 **Goal:** Establish a committed, reproducible baseline with automated verification on every pull request.
 
-## Phase 2: Database Layer
+## Phase 2: Design System
 
 | Ticket | Title | Status |
 |---|---|---|
-| — | Scaffold `packages/db` with Prisma | Planned |
-| — | Define initial schema (User, Account, Transaction, Category) | Planned |
-| — | Development seed data | Planned |
-| — | Docker Compose for local PostgreSQL | Planned |
+| — | Establish design tokens and dark-first theme variables | Planned |
+| — | Implement Tier 1 core component library in `@repo/ui` | Planned |
+| — | Integrate Lucide icons and typography styling | Planned |
 
-**Goal:** Type-safe database access available to backend services.
+**Goal:** Provide reusable visual building blocks supporting luxurious, responsive layouts.
 
-## Phase 3: Authentication
-
-| Ticket | Title | Status |
-|---|---|---|
-| — | Evaluate and integrate auth provider | Planned |
-| — | User registration and login flows | Planned |
-| — | Session management and protected routes | Planned |
-
-**Goal:** Secure user accounts with authenticated API access.
-
-## Phase 4: API Service
+## Phase 3: Landing Experience
 
 | Ticket | Title | Status |
 |---|---|---|
-| — | Scaffold `apps/api` | Planned |
-| — | Implement CRUD endpoints (accounts, transactions, categories) | Planned |
-| — | Input validation and error handling | Planned |
-| — | API integration tests | Planned |
+| — | Create cinematic Hero section with animated headings | Planned |
+| — | Add brand storytelling sections and features showcase | Planned |
+| — | Integrate testimonial cards and footer layout | Planned |
 
-**Goal:** Functional REST API backing all core data operations.
+**Goal:** Launch an emotionally engaging, high-aesthetic home page for Artha.
 
-## Phase 5: Frontend Application
-
-| Ticket | Title | Status |
-|---|---|---|
-| — | Application layout and navigation | Planned |
-| — | Dashboard with financial summary | Planned |
-| — | Account management UI | Planned |
-| — | Transaction entry and listing | Planned |
-| — | Category management | Planned |
-
-**Goal:** User-facing application for daily financial tracking.
-
-## Phase 6: Shared UI & Design System
+## Phase 4: Authentication
 
 | Ticket | Title | Status |
 |---|---|---|
-| — | Design tokens and theme | Planned |
-| — | Core component library in `@repo/ui` | Planned |
-| — | Tailwind CSS integration (if approved) | Planned |
-| — | shadcn/ui integration (if approved) | Planned |
+| — | Integrate backend authentication provider (e.g., Better Auth) | Planned |
+| — | Implement 2-column customer registration and login flows | Planned |
+| — | Manage secure customer sessions and route guards | Planned |
 
-**Goal:** Consistent, reusable UI components across the frontend.
+**Goal:** Secure customer accounts and personal data access.
 
-## Phase 7: Goals & Analytics
-
-| Ticket | Title | Status |
-|---|---|---|
-| — | Financial goal tracking | Planned |
-| — | Spending analytics and charts | Planned |
-| — | Monthly summary reports | Planned |
-
-**Goal:** Help users understand patterns and track progress toward goals.
-
-## Phase 8: Production Readiness
+## Phase 5: Catalog
 
 | Ticket | Title | Status |
 |---|---|---|
-| — | Production deployment pipeline | Planned |
-| — | Environment configuration (staging, production) | Planned |
-| — | Monitoring and error tracking | Planned |
-| — | Security audit | Planned |
+| — | Implement backend products API endpoints | Planned |
+| — | Create catalog listing grid for coffee products | Planned |
+| — | Add multi-criteria filtering by origin, roast, and taste profile | Planned |
 
-**Goal:** Artha is deployable, monitored, and secure for real users.
+**Goal:** Enable customers to browse and filter the coffee collection.
+
+## Phase 6: Product Pages
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Design high-polish, detail-rich product template pages | Planned |
+| — | Display tasting profile annotations and brewing instructions | Planned |
+| — | Add product reviews and customer ratings form | Planned |
+
+**Goal:** Showcase specialty coffee micro-lots through storytelling and detailed metadata.
+
+## Phase 7: Cart
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Build cart storage with guest-to-user persistence | Planned |
+| — | Implement slide-out shopping cart sheet component | Planned |
+| — | Setup cart CRUD endpoints and state handlers | Planned |
+
+**Goal:** Manage selected items with smooth, responsive micro-animations.
+
+## Phase 8: Checkout
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Design multi-step checkout form | Planned |
+| — | Implement discount coupon validation | Planned |
+| — | Integrate Stripe payment checkout flows | Planned |
+
+**Goal:** Provide an elegant, secure transaction funnel.
+
+## Phase 9: Orders
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Define database models for orders and payments | Planned |
+| — | Build order confirmation and receipt screen | Planned |
+| — | Implement automated purchase invoice emails | Planned |
+
+**Goal:** Complete transaction recording and customer notification.
+
+## Phase 10: Dashboard
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Build customer dashboard layout | Planned |
+| — | Setup subscription schedule, frequency, and pause options | Planned |
+| — | Display purchase history and shipping updates | Planned |
+
+**Goal:** Empower customers to manage subscriptions and orders dynamically.
+
+## Phase 11: Admin
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Design back-office admin dashboard | Planned |
+| — | Implement product creation and inventory management UI | Planned |
+| — | Build order fulfillment status tracking for admins | Planned |
+
+**Goal:** Operational tooling to run the e-commerce business.
+
+## Phase 12: AI Recommendations
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Implement tasting quiz flow for sensory profiling | Planned |
+| — | Build recommendation engine based on user preference vectors | Planned |
+| — | Show personalized recommendations across product detail cards | Planned |
+
+**Goal:** Match customers with specialty roasts tailored to their palate.
+
+## Phase 13: Performance
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Optimize visual media assets (WebP/AVIF) | Planned |
+| — | Implement query caching and database index optimizations | Planned |
+| — | Conduct accessibility (WCAG AA) and Lighthouse audits | Planned |
+
+**Goal:** Ensure the storefront loads instantly and remains highly accessible.
+
+## Phase 14: Deployment
+
+| Ticket | Title | Status |
+|---|---|---|
+| — | Configure CI/CD automated test & build checks | Planned |
+| — | Deploy Next.js web application on Vercel | Planned |
+| — | Set up environment variables and error tracking (Sentry) | Planned |
+
+**Goal:** Launch the platform securely in a production environment.
 
 ## Guiding Rules
 

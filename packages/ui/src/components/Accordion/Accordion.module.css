@@ -1,0 +1,88 @@
+/*
+ * Accordion.module.css
+ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item {
+  border-bottom: 1px solid var(--artha-color-border-subtle);
+}
+.item:last-of-type {
+  border-bottom: none;
+}
+
+.item h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--artha-space-4) 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--artha-color-text-primary);
+  border-radius: var(--artha-radius-xs);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--artha-color-brand);
+  outline-offset: 4px;
+}
+
+.trigger:hover .title {
+  color: var(--artha-color-brand-hover);
+}
+
+.title {
+  font-size: var(--artha-text-heading-sm);
+  font-weight: var(--artha-font-weight-medium);
+  transition: color var(--artha-duration-fast) var(--artha-ease-standard);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--artha-color-text-secondary);
+  transition: transform var(--artha-duration-moderate) var(--artha-ease-overshoot);
+}
+
+.expanded .iconWrapper {
+  transform: rotate(180deg);
+}
+
+.contentWrapper {
+  overflow: hidden;
+  animation: artha-accordion-down var(--artha-duration-moderate) var(--artha-ease-decelerate);
+}
+
+/* Because height: auto cannot be transitioned cleanly without JS resize observers,
+   we use a simpler approach or CSS grid approach if supported.
+   Since this is a simple implementation, we'll rely on a basic slide-down keyframe. */
+
+@keyframes artha-accordion-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contentInner {
+  padding-bottom: var(--artha-space-4);
+  font-size: var(--artha-text-body-md);
+  color: var(--artha-color-text-secondary);
+}

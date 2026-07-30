@@ -1,0 +1,30 @@
+/*
+ * FormField.module.css
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-2);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1);
+}
+
+.description {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-text-secondary);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-danger-text);
+}

@@ -1,0 +1,115 @@
+/*
+ * Radio.module.css
+ */
+
+.group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend {
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-primary);
+  margin-bottom: var(--artha-space-2);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-2);
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.radioWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 1;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--artha-radius-full);
+  border: 1.5px solid var(--artha-color-border-default);
+  background: var(--artha-color-surface-base);
+  transition:
+    background var(--artha-duration-normal) var(--artha-ease-standard),
+    border-color var(--artha-duration-normal) var(--artha-ease-standard);
+  pointer-events: none;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--artha-radius-full);
+  background: transparent;
+  transition:
+    background var(--artha-duration-normal) var(--artha-ease-standard),
+    transform var(--artha-duration-normal) var(--artha-ease-overshoot);
+  transform: scale(0);
+}
+
+.input:checked + .indicator {
+  border-color: var(--artha-color-brand);
+}
+
+.input:checked + .indicator .dot {
+  background: var(--artha-color-brand);
+  transform: scale(1);
+}
+
+.input:focus-visible + .indicator {
+  box-shadow: var(--artha-shadow-focus);
+}
+
+.label {
+  font-size: var(--artha-text-body-sm);
+  color: var(--artha-color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  line-height: var(--artha-leading-normal);
+}
+
+.description {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-text-secondary);
+  margin: 0;
+  padding-left: calc(18px + var(--artha-space-2));
+}

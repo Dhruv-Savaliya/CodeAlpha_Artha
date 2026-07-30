@@ -1,0 +1,105 @@
+/*
+ * Select.module.css
+ * Design tokens only — no hard-coded values.
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1-5);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--artha-color-surface-base);
+  border: 1px solid var(--artha-color-border-default);
+  border-radius: var(--artha-radius-md);
+  transition:
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard);
+}
+
+.wrapper:focus-within {
+  border-color: var(--artha-color-border-focus);
+  box-shadow: var(--artha-shadow-focus);
+}
+
+/* Sizes */
+.size-sm { min-height: 32px; }
+.size-md { min-height: 40px; }
+.size-lg { min-height: 48px; }
+
+/* Status */
+.status-error {
+  border-color: var(--artha-color-danger);
+}
+.status-error:focus-within {
+  border-color: var(--artha-color-danger);
+  box-shadow: 0 0 0 2px var(--artha-color-bg-base), 0 0 0 4px var(--artha-color-danger);
+}
+
+.status-success {
+  border-color: var(--artha-color-success);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.select {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--artha-color-text-primary);
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-body-sm);
+  appearance: none;
+  cursor: pointer;
+  padding: var(--artha-space-3) var(--artha-space-8) var(--artha-space-3) var(--artha-space-4);
+}
+
+.size-sm .select {
+  font-size: var(--artha-text-body-xs);
+  padding: var(--artha-space-1-5) var(--artha-space-7) var(--artha-space-1-5) var(--artha-space-3);
+}
+
+.size-lg .select {
+  font-size: var(--artha-text-body-md);
+  padding: var(--artha-space-3-5) var(--artha-space-9) var(--artha-space-3-5) var(--artha-space-5);
+}
+
+.select:disabled {
+  cursor: not-allowed;
+}
+
+.iconLeft {
+  display: flex;
+  align-items: center;
+  padding-left: var(--artha-space-3);
+  color: var(--artha-color-text-tertiary);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.chevron {
+  position: absolute;
+  right: var(--artha-space-3);
+  display: flex;
+  align-items: center;
+  color: var(--artha-color-text-tertiary);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.errorMessage {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-danger-text);
+  margin: 0;
+}

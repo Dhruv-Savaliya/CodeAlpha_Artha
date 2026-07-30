@@ -34,26 +34,25 @@
 
 ### Brand Identity
 
-**Artha** (Sanskrit: wealth, purpose, material well-being) is a personal finance platform. The visual identity must embody:
+**Artha** (Sanskrit: wealth, purpose, material well-being) is a premium AI-powered coffee e-commerce platform. The visual identity must embody:
 
 | Principle | Expression |
 |---|---|
-| **Trust** | Calm colors, consistent structure, zero clutter |
-| **Clarity** | Spacious layouts, clear hierarchy, readable numbers |
-| **Elegance** | Refined typography, soft depth, intentional whitespace |
-| **Premium** | Considered micro-interactions, rich but quiet details |
-| **Calm** | Muted palette, no alarming reds, gentle feedback |
+| **Premium** | Craftsmanship, tactile luxury, zero digital clutter |
+| **Sensory** | Warm colors, organic motion, rich origin storytelling |
+| **Elegance** | Refined typography, soft depth, cinematic whitespace |
+| **Tactile** | Quiet micro-interactions, rich detail, fluid transitions |
+| **Minimal** | Breathing room, font scale authority, essential layout |
 
 ### Inspiration References
 
 | Product | What We Borrow |
 |---|---|
-| **Linear** | Keyboard-first UX, sidebar density, monochrome precision |
-| **Mercury** | Financial trust, whitespace mastery, typography hierarchy |
-| **Stripe** | Documentation clarity, component polish, gradient subtlety |
-| **CRED** | Dark premium aesthetic, card-centric layouts, rewards psychology |
-| **Jupiter / Fi Money** | Indian fintech context, mobile-first thinking, goal-oriented UX |
-| **Apple** | Restraint, breathing room, font scale authority |
+| **Blue Bottle Coffee** | Specialty coffee discovery, minimalist elegance, brewing guides |
+| **Leica** | Tactile luxury, absolute minimalism, mechanical precision |
+| **Stripe** | Impeccable component polish, layout refinement, gradient subtlety |
+| **CRED / Linear** | Deep dark-first premium aesthetic, interactive card layouts, micro-interactions |
+| **Apple** | Sensory breathing room, cinematic scrolling, premium product showcase |
 
 > [!NOTE]
 > These are **inspiration** references only. No direct visual copying. Artha must feel original.
@@ -82,7 +81,7 @@ Examples: `--artha-color-primary-500`, `--artha-space-4`, `--artha-radius-lg`
 **Monospace (Numbers, Code):** `JetBrains Mono` via Google Fonts
 **Fallback:** `system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 
-> **Rationale:** Inter is the gold standard for fintech dashboards — neutral, highly readable at small sizes, and excellent numerical glyph clarity. JetBrains Mono for financial figures provides tabular number rendering.
+> **Rationale:** Inter is the gold standard for premium e-commerce dashboards — neutral, highly readable at small sizes, and excellent numerical glyph clarity. JetBrains Mono for pricing figures provides tabular number rendering.
 
 ### Type Scale (8px base, modular scale 1.25)
 
@@ -143,7 +142,7 @@ Examples: `--artha-color-primary-500`, `--artha-space-4`, `--artha-radius-lg`
 | Table header | `label-sm` | `semibold` UPPERCASE | Inter |
 | Large balance | `numeric-2xl` | `bold` | JetBrains Mono |
 | Card amount | `numeric-lg` | `semibold` | JetBrains Mono |
-| Transaction amount | `numeric-sm` | `medium` | JetBrains Mono |
+| Order amount | `numeric-sm` | `medium` | JetBrains Mono |
 | Badge / chip | `label-xs` | `semibold` UPPERCASE | Inter |
 
 ---
@@ -227,7 +226,7 @@ An **8px base grid** governs all spacing decisions. Never use arbitrary values.
 --artha-palette-neutral-950: #09090b;
 --artha-palette-neutral-1000:#000000;
 
-/* === BRAND — Artha Indigo (trust, premium, Indian fintech) === */
+/* === BRAND — Artha Indigo (trust, premium, Indian luxury) === */
 --artha-palette-brand-50:  #eef2ff;
 --artha-palette-brand-100: #e0e7ff;
 --artha-palette-brand-200: #c7d2fe;
@@ -248,14 +247,14 @@ An **8px base grid** governs all spacing decisions. Never use arbitrary values.
 
 /* === SEMANTIC FUNCTIONAL COLORS === */
 
-/* Success — Wealth growth, positive deltas */
+/* Success — Completed orders, positive actions */
 --artha-palette-success-50:  #f0fdf4;
 --artha-palette-success-400: #4ade80;
 --artha-palette-success-500: #22c55e;
 --artha-palette-success-600: #16a34a;
 --artha-palette-success-900: #14532d;
 
-/* Warning — Budget alerts, attention needed */
+/* Warning — Low stock alerts, attention needed */
 --artha-palette-warning-50:  #fffbeb;
 --artha-palette-warning-400: #fbbf24;
 --artha-palette-warning-500: #f59e0b;
@@ -511,7 +510,7 @@ All animations serve a purpose:
 | `blur-in` | `blur(8px)→0, opacity 0→1` | `400ms` | `decelerate` | Loading reveal, hero |
 | `stagger-reveal` | `slide-up` applied per-child with `50ms` delay | — | `decelerate` | List items, card grids |
 | `count-up` | Number interpolation, 60fps | `800ms` | `decelerate` | Balance displays, stats |
-| `progress-fill` | `width: 0→N%` | `600ms` | `decelerate` | Budget bars, goal progress |
+| `progress-fill` | `width: 0→N%` | `600ms` | `decelerate` | Order progress, rating bars |
 | `sidebar-collapse` | `width: 240px→60px` | `300ms` | `standard` | Sidebar toggle |
 | `skeleton-pulse` | `opacity: 0.4→0.7` loop | `1.5s` | `ease-in-out` | Loading skeletons |
 
@@ -583,8 +582,8 @@ All components live in `packages/ui/src/components/`. Components are categorized
 |---|---|---|
 | `Card` | Content container | `flat`, `elevated`, `bordered`, `interactive` |
 | `StatCard` | Metric display card | `simple`, `with-trend`, `with-chart`, `with-icon` |
-| `TransactionItem` | Single transaction row | `default`, `pending`, `failed` |
-| `TransactionList` | List of transactions | — |
+| `OrderItem` | Single order row | `default`, `pending`, `failed` |
+| `OrderList` | List of orders | — |
 | `Table` | Data table | `default`, `striped`, `compact` |
 | `TableHeader` | Table column header | `sortable`, `default` |
 | `DataGrid` | Sortable/filterable grid | — |
@@ -598,9 +597,9 @@ All components live in `packages/ui/src/components/`. Components are categorized
 | `SparkLine` | Inline mini chart | — |
 | `TrendIndicator` | Up/down change display | `positive`, `negative`, `neutral` |
 | `AmountDisplay` | Formatted currency amount | `income`, `expense`, `neutral` |
-| `GoalCard` | Financial goal display | — |
-| `BudgetCard` | Budget usage display | — |
-| `AccountCard` | Bank account display | — |
+| `SubscriptionCard` | Subscription plan display | — |
+| `CouponCard` | Discount coupon display | — |
+| `ProductCard` | Coffee product display | — |
 | `InsightCard` | AI/analytical insight | — |
 
 ### Tier 4 — Overlays & Feedback
@@ -656,13 +655,13 @@ All components live in `packages/ui/src/components/`. Components are categorized
 | Route | Page | Priority |
 |---|---|---|
 | `/dashboard` | Dashboard (Home) | P0 |
-| `/transactions` | Transactions | P0 |
-| `/transactions/[id]` | Transaction Detail | P1 |
-| `/accounts` | Accounts | P0 |
-| `/accounts/[id]` | Account Detail | P1 |
-| `/budgets` | Budgets | P0 |
-| `/goals` | Goals | P0 |
-| `/goals/[id]` | Goal Detail | P1 |
+| `/orders` | Orders | P0 |
+| `/orders/[id]` | Order Detail | P1 |
+| `/products` | Products | P0 |
+| `/products/[id]` | Product Detail | P1 |
+| `/cart` | Cart | P0 |
+| `/subscriptions` | Subscriptions | P0 |
+| `/subscriptions/[id]` | Subscription Detail | P1 |
 | `/analytics` | Analytics | P1 |
 | `/categories` | Categories | P1 |
 | `/search` | Search Results | P1 |
@@ -909,8 +908,8 @@ Layout: Centered, text-center
 Padding: 120px top, 80px bottom
 
 Content hierarchy:
-  1. Eyebrow badge: "Personal Finance, Reimagined" (brand color, pill)
-  2. H1: "Your wealth, your clarity." (display-xl, bold, ~60px)
+  1. Eyebrow badge: "Specialty Coffee, Reimagined" (brand color, pill)
+  2. H1: "Your coffee, your clarity." (display-xl, bold, ~60px)
      Gradient: linear-gradient(135deg, neutral-50, brand-300) for dark mode
   3. Subtitle: 1-2 lines, body-lg, secondary color, max-width: 560px
   4. CTA buttons: [Primary: "Start for free"] [Secondary ghost: "See how it works"]
@@ -940,9 +939,9 @@ Display:
 ```
 Layout: Alternating left/right on desktop; stacked on mobile
 3 primary features (Phase 1 scope):
-  1. Transaction Tracking — icon: receipt, color: brand
-  2. Budget Management  — icon: pie-chart, color: success
-  3. Goal Setting        — icon: target, color: warning
+  1. Precision Roasting — icon: flame, color: brand
+  2. Single Origin Sourcing — icon: map-pin, color: success
+  3. Tailored Subscriptions — icon: package, color: warning
 
 Each feature:
   Icon in a soft rounded square (brand-subtle bg)
@@ -968,7 +967,7 @@ Each with a shield/lock icon
 ### Social Proof / Testimonials
 
 ```
-Heading: "Loved by people who take their finances seriously"
+Heading: "Loved by people who take their coffee seriously"
 3 testimonial cards in a row:
   Avatar + Name + Role
   Quote text (body-md, secondary)
@@ -1006,12 +1005,12 @@ DashboardLayout
 │   ├── Nav Group: "Overview"
 │   │   ├── Dashboard (icon: grid-2x2)
 │   │   └── Analytics (icon: bar-chart-3)
-│   ├── Nav Group: "Money"
-│   │   ├── Accounts (icon: credit-card)
-│   │   ├── Transactions (icon: arrow-left-right)
-│   │   └── Budgets (icon: pie-chart)
-│   ├── Nav Group: "Planning"
-│   │   └── Goals (icon: target)
+│   ├── Nav Group: "Shop"
+│   │   ├── Products (icon: coffee)
+│   │   ├── Categories (icon: list)
+│   │   └── Subscriptions (icon: repeat)
+│   ├── Nav Group: "Orders"
+│   │   └── Order History (icon: package)
 │   ├── (spacer)
 │   ├── Search (icon: search)
 │   ├── Notifications (icon: bell)
@@ -1025,8 +1024,8 @@ DashboardLayout
 │   └── Page Body (32px padding)
 │       ├── Row 1: Stat Cards (4 col)
 │       ├── Row 2: Chart (7fr) + Quick summary (5fr)
-│       ├── Row 3: Recent Transactions (7fr) + Goals (5fr)
-│       └── Row 4: Budget overview (full width or 2 col)
+│       ├── Row 3: Recent Orders (7fr) + Active Subscriptions (5fr)
+│       └── Row 4: Product Recommendations (full width or 2 col)
 ```
 
 ### Stat Cards (Row 1)
@@ -1035,10 +1034,10 @@ DashboardLayout
 
 | Card | Metric | Icon | Color |
 |---|---|---|---|
-| Total Balance | Sum of all accounts | wallet | brand |
-| Monthly Income | This month's income | trending-up | success |
-| Monthly Expenses | This month's spending | trending-down | danger |
-| Net Savings | Income − Expenses | piggy-bank | info |
+| Total Orders | All completed orders | package | brand |
+| Monthly Spend | Spend this month | credit-card | warning |
+| Active Subs | Active subscriptions | repeat | success |
+| Points Earned | Loyalty points | star | info |
 
 Each stat card:
 - Title (label-sm, secondary)
@@ -1062,10 +1061,10 @@ Each stat card:
 - Legend below: Category + amount + percentage
 - Max 6 categories + "Other"
 
-### Transactions (Row 3 Left)
+### Orders (Row 3 Left)
 
-- Section header: "Recent Transactions" + "View all →" link
-- 5–7 most recent transactions
+- Section header: "Recent Orders" + "View all →" link
+- 5–7 most recent orders
 - Each row: `TransactionItem`
   - Category icon (24px in soft square)
   - Description (body-sm, primary)
@@ -1074,28 +1073,28 @@ Each stat card:
   - Amount (numeric-sm, colored: positive/negative)
 - "Load more" or pagination at bottom
 
-### Goals Panel (Row 3 Right)
+### Subscriptions (Row 3 Right)
 
-- Section header: "Goals" + "Add goal →" button
-- 2–3 goal cards
-  - Goal name + icon
-  - Progress bar (ProgressBar component)
-  - "₹X of ₹Y" label
-  - "X% complete" and target date
+- Section header: "Subscriptions" + "Add subscription →" button
+- 2–3 subscription cards
+  - Plan name + icon
+  - Progress bar (ProgressBar component for next delivery)
+  - "Next delivery: [Date]" label
+  - "Skip" or "Manage" quick actions
 
-### Budgets (Row 4)
+### Recommendations (Row 4)
 
-- 3 or 4 budget cards in a row
-- Each: Category + icon, used/limit bar, amount display
-- Status: on-track (success), approaching (warning), exceeded (danger)
+- 3 or 4 product cards in a row
+- Each: Coffee bag image, roast level, origin, price
+- Quick action: "Add to cart" button
 
 ### Quick Actions (FAB or floating panel)
 
 Four primary actions accessible from any page:
-1. ➕ Add Transaction
-2. 💳 Add Account
-3. 🎯 New Goal
-4. 📊 View Report
+1. ➕ New Order
+2. 💳 Checkout
+3. 🎯 Coffee Quiz
+4. 📊 Order History
 
 ---
 
@@ -1145,73 +1144,69 @@ Step 2: Check email (animated envelope icon)
 Step 3: New password form (on reset link click)
 ```
 
-### Transactions Page
+### Orders Page
 
 ```
 Header:
-  Title: "Transactions"
-  Actions: [Search] [Filter] [Add Transaction] [Export]
+  Title: "Orders"
+  Actions: [Search] [Filter] [Export]
 
 Filter Bar (collapsible):
   Date range picker
-  Category multi-select
-  Account multi-select
+  Status multi-select (Pending, Shipped, Delivered)
   Amount range
-  Type: Income / Expense / Transfer
 
 Table or grouped list:
   Group by date (day headers)
-  TransactionItem per row
+  OrderItem per row
   Bulk select checkboxes (on hover)
-  BulkActionBar (on selection): [Delete] [Categorize] [Export]
+  BulkActionBar (on selection): [Export]
 
 Pagination: Load more or numeric pages
-Empty state: Illustration + "No transactions yet" + "Add your first"
+Empty state: Illustration + "No orders yet" + "Start shopping"
 ```
 
-### Accounts Page
+### Products Page
 
 ```
-Summary bar: Total across all accounts
-Account cards grid (2 or 3 col):
-  AccountCard:
-    Bank logo placeholder (colored initial avatar)
-    Account name
-    Account type (Savings, Checking, Credit)
-    Balance (numeric-lg, colored)
-    Last synced (tertiary text)
-    Quick action: View transactions
-"Add Account" card (dashed border, plus icon)
+Summary bar: Total available products
+Product cards grid (3 or 4 col):
+  ProductCard:
+    Coffee bag image placeholder
+    Product name
+    Roast level (Light, Medium, Dark)
+    Price (numeric-lg)
+    Origin (tertiary text)
+    Quick action: View details
+"Add Product" card (dashed border, plus icon) (Admin only)
 ```
 
-### Goals Page
+### Cart Page
 
 ```
-Header: "Goals" + "New Goal" button
-Progress overview bar (total saved vs total target)
-Goal cards in grid:
-  GoalCard:
-    Goal name + emoji/icon
-    Target amount
-    Current amount
-    Progress ring (visual %)
-    Target date + countdown
-    "Add money" quick action
-Empty state: Rocket/target illustration
+Header: "Your Cart" + "Checkout" button
+Cart overview (subtotal, shipping, taxes)
+Cart items list:
+  CartItem:
+    Product name + image
+    Quantity selector (+/-)
+    Unit price
+    Total price for item
+    "Remove" quick action
+Empty state: Empty coffee cup illustration
 ```
 
-### Budgets Page
+### Subscriptions Page
 
 ```
-Month selector (prev/next arrows + month name)
-Overview ring: Total spent vs total budgeted
-Category budgets list:
-  BudgetCard for each:
-    Category icon + name
-    Progress bar (color-coded by status)
-    "₹X spent of ₹Y"
-    Percentage and days remaining
-"Add Budget" button (end of list)
+Overview ring: Active vs Paused subscriptions
+Subscription plans list:
+  SubscriptionCard for each:
+    Plan name + icon
+    Delivery frequency (Weekly, Monthly)
+    "Next delivery: [Date]"
+    Status badge (Active, Paused)
+"New Subscription" button
 ```
 
 ### Analytics Page
@@ -1224,7 +1219,7 @@ Section 2: Spending categories donut (full period)
 Section 3: Spending trend line (daily/weekly)
 Section 4: Top merchants / payees list
 Section 5: Month-over-month comparison table
-Section 6: Net worth trend (future, when accounts are connected)
+Section 6: Customer lifetime value trend
 ```
 
 ### Profile / Settings Page
@@ -1235,7 +1230,7 @@ Sidebar navigation within settings:
   Appearance
   Security
   Notifications
-  Connected Accounts (future)
+  Payment Methods
   Danger Zone
 
 Profile:
@@ -1262,10 +1257,10 @@ Notifications:
 
 | Context | Heading | Sub | CTA |
 |---|---|---|---|
-| No transactions | "Your story starts here" | "Add your first transaction to begin tracking" | "Add Transaction" |
-| No accounts | "Connect your first account" | "Add your bank accounts to see everything in one place" | "Add Account" |
-| No goals | "Dream it, plan it, achieve it" | "Create your first financial goal" | "New Goal" |
-| No budgets | "Stay in control" | "Set up budgets to track your spending limits" | "Create Budget" |
+| No orders | "Your coffee journey starts here" | "Place your first order" | "Start Shopping" |
+| No products | "The roastery is empty" | "Add your first coffee product" | "Add Product" |
+| No subscriptions | "Never run out of coffee" | "Set up your first automated delivery" | "New Subscription" |
+| No cart items | "Your cart is empty" | "Discover our latest roasts" | "Browse Coffee" |
 | Search empty | "Nothing found for '[query]'" | "Try different keywords or filters" | "Clear filters" |
 
 ### Error Pages
@@ -1473,9 +1468,9 @@ This roadmap aligns with `docs/05_Development_Roadmap.md` Phase 6 (Shared UI & D
 | 5.2 | `TrendIndicator` + `AmountDisplay` |
 | 5.3 | Cash Flow area chart (recharts or similar) |
 | 5.4 | Spending breakdown donut chart |
-| 5.5 | `TransactionItem` + `TransactionList` |
-| 5.6 | `GoalCard` + Goals panel |
-| 5.7 | `BudgetCard` + Budget overview |
+| 5.5 | `OrderItem` + `OrderList` |
+| 5.6 | `SubscriptionCard` + Subscriptions panel |
+| 5.7 | `ProductCard` + Recommendations overview |
 | 5.8 | Dashboard page assembly |
 | 5.9 | Count-up animation for stat numbers |
 | 5.10 | Skeleton loaders for all dashboard sections |
@@ -1484,18 +1479,18 @@ This roadmap aligns with `docs/05_Development_Roadmap.md` Phase 6 (Shared UI & D
 
 ### Sprint 6 — Core Pages (Phase 5)
 
-**Goal**: Transactions, Accounts, Budgets, Goals pages
+**Goal**: Orders, Products, Cart, Subscriptions pages
 
 | Task | Deliverable |
 |---|---|
-| 6.1 | Transactions page (table + group-by-date) |
+| 6.1 | Orders page (table + group-by-date) |
 | 6.2 | Filter bar + date range picker |
-| 6.3 | Transaction detail page |
-| 6.4 | Accounts page + AccountCard |
-| 6.5 | Goals page + GoalCard |
-| 6.6 | Budgets page + BudgetCard |
+| 6.3 | Order detail page |
+| 6.4 | Products page + ProductCard |
+| 6.5 | Cart page + Cart overview |
+| 6.6 | Subscriptions page + SubscriptionCard |
 | 6.7 | `EmptyState` for all pages |
-| 6.8 | Add Transaction modal/sheet |
+| 6.8 | Add Product modal/sheet |
 
 ---
 
@@ -1539,10 +1534,10 @@ Key icons:
 | Context | Icon |
 |---|---|
 | Dashboard | `LayoutDashboard` |
-| Transactions | `ArrowLeftRight` |
-| Accounts | `CreditCard` |
-| Budgets | `PieChart` |
-| Goals | `Target` |
+| Orders | `Package` |
+| Products | `Coffee` |
+| Subscriptions | `Repeat` |
+| Cart | `ShoppingCart` |
 | Analytics | `BarChart3` |
 | Settings | `Settings` |
 | Notifications | `Bell` |

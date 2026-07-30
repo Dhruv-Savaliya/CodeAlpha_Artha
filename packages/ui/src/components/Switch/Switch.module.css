@@ -1,0 +1,113 @@
+/*
+ * Switch.module.css
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2-5);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Track sizes */
+.size-sm.track {
+  width: 32px;
+  height: 18px;
+}
+.size-sm .thumb {
+  width: 14px;
+  height: 14px;
+}
+.size-sm .input:checked + .thumb {
+  transform: translateX(14px);
+}
+
+.size-md.track {
+  width: 44px;
+  height: 24px;
+}
+.size-md .thumb {
+  width: 20px;
+  height: 20px;
+}
+.size-md .input:checked + .thumb {
+  transform: translateX(20px);
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--artha-radius-full);
+  background: var(--artha-color-surface-overlay);
+  border: 1px solid var(--artha-color-border-default);
+  transition:
+    background var(--artha-duration-normal) var(--artha-ease-standard),
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard);
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 1;
+}
+
+.thumb {
+  position: absolute;
+  left: 2px;
+  border-radius: var(--artha-radius-full);
+  background: var(--artha-color-text-primary);
+  box-shadow: var(--artha-shadow-sm);
+  transition:
+    transform var(--artha-duration-moderate) var(--artha-ease-overshoot),
+    background var(--artha-duration-normal) var(--artha-ease-standard);
+  pointer-events: none;
+}
+
+.input:checked + .thumb {
+  background: var(--artha-color-text-on-brand);
+}
+
+.track:has(.input:checked) {
+  background: var(--artha-color-brand);
+  border-color: var(--artha-color-brand);
+}
+
+.input:focus-visible ~ .thumb {
+  /* We put the ring on the track, so use a parent selector approach */
+}
+.track:has(.input:focus-visible) {
+  box-shadow: var(--artha-shadow-focus);
+}
+
+.label {
+  font-size: var(--artha-text-body-sm);
+  color: var(--artha-color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  line-height: var(--artha-leading-normal);
+}
+
+.description {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-text-secondary);
+  margin: 0;
+}

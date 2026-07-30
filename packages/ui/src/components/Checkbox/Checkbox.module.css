@@ -1,0 +1,86 @@
+/*
+ * Checkbox.module.css
+ */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Hide native input visually but keep accessible */
+.checkboxWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 1;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--artha-radius-sm);
+  border: 1.5px solid var(--artha-color-border-default);
+  background: var(--artha-color-surface-base);
+  color: transparent;
+  transition:
+    background var(--artha-duration-normal) var(--artha-ease-standard),
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    color var(--artha-duration-fast) var(--artha-ease-standard);
+  pointer-events: none;
+}
+
+.input:checked + .indicator,
+.input:indeterminate + .indicator {
+  background: var(--artha-color-brand);
+  border-color: var(--artha-color-brand);
+  color: var(--artha-color-text-on-brand);
+}
+
+.input:focus-visible + .indicator {
+  box-shadow: var(--artha-shadow-focus);
+}
+
+.label {
+  font-size: var(--artha-text-body-sm);
+  color: var(--artha-color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  line-height: var(--artha-leading-normal);
+}
+
+.description {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-text-secondary);
+  margin: 0;
+  padding-left: calc(18px + var(--artha-space-2));
+}

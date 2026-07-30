@@ -1,0 +1,47 @@
+/*
+ * Tooltip.module.css
+ */
+
+.container {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: var(--artha-z-tooltip);
+  padding: var(--artha-space-1-5) var(--artha-space-2-5);
+  background: var(--artha-color-surface-overlay);
+  color: var(--artha-color-text-primary);
+  font-size: var(--artha-text-label-sm);
+  font-weight: var(--artha-font-weight-medium);
+  border-radius: var(--artha-radius-md);
+  box-shadow: var(--artha-shadow-md);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: artha-fade-in var(--artha-duration-fast) var(--artha-ease-decelerate);
+}
+
+.position-top {
+  bottom: calc(100% + var(--artha-space-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.position-bottom {
+  top: calc(100% + var(--artha-space-2));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.position-left {
+  right: calc(100% + var(--artha-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.position-right {
+  left: calc(100% + var(--artha-space-2));
+  top: 50%;
+  transform: translateY(-50%);
+}

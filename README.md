@@ -1,12 +1,12 @@
 # Artha
 
-**Personal finance, with clarity.**
+**Premium coffee e-commerce, with sensory excellence.**
 
-Artha is a personal finance platform that helps individuals understand, manage, and grow their financial life. Built as a modern TypeScript monorepo by the CodeAlpha engineering team.
+Artha is a premium AI-powered coffee e-commerce platform that builds an emotional brand through storytelling, motion design, and exceptional UX. Built as a modern TypeScript monorepo by the CodeAlpha engineering team.
 
 ## Vision
 
-Most people lack a single, trustworthy view of their finances. Artha provides clarity through accurate tracking, thoughtful categorization, and goal-oriented planning — without the complexity of spreadsheets or the opacity of disconnected apps.
+Artha is designed to craft a luxurious, minimalistic, and cinematic online shopping experience for coffee lovers and premium lifestyle customers. Through storytelling, motion design, and AI-powered recommendations, Artha turns purchasing specialty coffee into an emotional brand experience.
 
 See [`docs/01_Product_Vision.md`](docs/01_Product_Vision.md) for the full product vision.
 

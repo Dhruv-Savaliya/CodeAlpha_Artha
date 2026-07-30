@@ -73,7 +73,7 @@ Use **Next.js 16** (App Router) with **React 19** for `apps/web`.
 
 ### Context
 
-Artha handles relational financial data (users, accounts, transactions, categories) requiring ACID compliance and type-safe access from TypeScript.
+Artha handles relational e-commerce data (users, products, orders, categories, subscriptions) requiring ACID compliance and type-safe access from TypeScript.
 
 ### Decision
 
@@ -204,7 +204,7 @@ A comprehensive UI/UX Design Specification is maintained at `docs/07_Design_Spec
 - Prevents fragmented design decisions across tickets.
 - Enables engineers to implement UI independently with guaranteed consistency.
 - Establishes `--artha-*` CSS custom properties as canonical, stable token names.
-- Aligns the product aesthetic with premium fintech references (Mercury, CRED, Linear, Stripe) while remaining original.
+- Aligns the product aesthetic with premium storytelling and e-commerce references (Linear, Stripe, Apple) while remaining original.
 - Provides measurable quality targets for accessibility and performance.
 
 ### Consequences
