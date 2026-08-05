@@ -1,6 +1,9 @@
 // Providers
 export * from "./providers/ThemeProvider/index";
 
+// Layout Shell
+export * from "./components/AppShell/index";
+
 // Foundation Components
 export * from "./components/Accordion/index";
 export * from "./components/Avatar/index";

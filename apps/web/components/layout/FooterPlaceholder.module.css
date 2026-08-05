@@ -1,0 +1,18 @@
+/* FooterPlaceholder.module.css */
+
+.footer {
+  width: 100%;
+  min-height: 80px;
+  background-color: var(--artha-color-bg-subtle);
+  border-top: 1px solid var(--artha-color-border-subtle);
+  transition-property: background-color, border-color;
+  transition-duration: var(--artha-duration-normal);
+  transition-timing-function: var(--artha-ease-standard);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 80px;
+}

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "@repo/ui";
+import { ThemeProvider, AppShell } from "@repo/ui";
+import { HeaderPlaceholder } from "../components/layout/HeaderPlaceholder";
+import { FooterPlaceholder } from "../components/layout/FooterPlaceholder";
 import "./globals.css";
+
+/* ── Fonts ────────────────────────────────────────────────────────────────── */
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,10 +19,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+/* ── Metadata ─────────────────────────────────────────────────────────────── */
+
 export const metadata: Metadata = {
   title: "Artha | Personal Finance Reimagined",
-  description: "A thoughtful system for tracking money, setting goals, and making informed financial decisions.",
+  description:
+    "A thoughtful system for tracking money, setting goals, and making informed financial decisions.",
 };
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
 
 export default function RootLayout({
   children,
@@ -29,7 +38,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <ThemeProvider defaultTheme="dark">
-          {children}
+          <AppShell
+            header={<HeaderPlaceholder />}
+            footer={<FooterPlaceholder />}
+          >
+            {children}
+          </AppShell>
         </ThemeProvider>
       </body>
     </html>

@@ -1,0 +1,20 @@
+/* HeaderPlaceholder.module.css */
+
+.header {
+  width: 100%;
+  height: 64px;
+  background-color: var(--artha-color-bg-base);
+  border-bottom: 1px solid var(--artha-color-border-subtle);
+  /* Subtle backdrop blur for glass morphism effect when sticky */
+  backdrop-filter: blur(var(--artha-blur-md));
+  -webkit-backdrop-filter: blur(var(--artha-blur-md));
+  transition-property: background-color, border-color;
+  transition-duration: var(--artha-duration-normal);
+  transition-timing-function: var(--artha-ease-standard);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
