@@ -1,0 +1,149 @@
+/**
+ * BestSellers.module.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Structural product grid — placeholder for the future Product Card System.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+.section {
+  --home-accent: var(--artha-palette-warning-500);
+  background-color: var(--artha-color-bg-subtle);
+}
+
+/* ── Section header ────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-3);
+  margin-bottom: var(--artha-space-12);
+}
+
+.eyebrow {
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-widest);
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.heading {
+  font-size: var(--artha-text-heading-xl);
+  font-weight: var(--artha-font-weight-semibold);
+  line-height: var(--artha-leading-snug);
+  letter-spacing: var(--artha-tracking-tight);
+  color: var(--artha-color-text-primary);
+}
+
+.description {
+  font-size: var(--artha-text-body-lg);
+  line-height: var(--artha-leading-relaxed);
+  color: var(--artha-color-text-secondary);
+  max-width: 52ch;
+}
+
+/* ── Product grid ──────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--artha-space-6);
+}
+
+/* ── Product slot ──────────────────────────────────────────────────────────── */
+
+.productSlot {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--artha-color-surface-base);
+  border: 1px solid var(--artha-color-border-subtle);
+  transition:
+    border-color var(--artha-duration-normal) var(--artha-ease-standard),
+    box-shadow var(--artha-duration-normal) var(--artha-ease-standard);
+}
+
+.productSlot:hover {
+  border-color: var(--artha-color-border-default);
+  box-shadow: var(--artha-shadow-md);
+}
+
+/* Image placeholder */
+.productImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--artha-color-surface-raised);
+  border-bottom: 1px solid var(--artha-color-border-subtle);
+  overflow: hidden;
+}
+
+/* Diagonal placeholder pattern */
+.productImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    var(--artha-color-border-subtle) 45%,
+    var(--artha-color-border-subtle) 55%,
+    transparent 55%
+  );
+}
+
+/* Product metadata area */
+.productMeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-3);
+  padding: var(--artha-space-5);
+  flex: 1;
+}
+
+.productName {
+  font-size: var(--artha-text-heading-sm);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-primary);
+  line-height: var(--artha-leading-snug);
+}
+
+.productDescription {
+  font-size: var(--artha-text-body-sm);
+  line-height: var(--artha-leading-relaxed);
+  color: var(--artha-color-text-secondary);
+  flex: 1;
+}
+
+/* Price + CTA row */
+.productFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--artha-space-4);
+  padding: var(--artha-space-4) var(--artha-space-5);
+  border-top: 1px solid var(--artha-color-border-subtle);
+}
+
+.productPrice {
+  font-size: var(--artha-text-heading-xs);
+  font-weight: var(--artha-font-weight-semibold);
+  color: var(--artha-color-text-primary);
+  font-family: var(--artha-font-mono);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .header {
+    margin-bottom: var(--artha-space-8);
+  }
+}

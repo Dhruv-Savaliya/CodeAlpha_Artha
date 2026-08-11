@@ -22,10 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 /* ── Metadata ─────────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: "Artha | Personal Finance Reimagined",
+  title: {
+    default:  "Artha | Specialty Coffee, Roasted to Order",
+    template: "%s | Artha Coffee",
+  },
   description:
-    "A thoughtful system for tracking money, setting goals, and making informed financial decisions.",
+    "Premium specialty coffee sourced directly from single-origin farms. Roasted fresh in Bengaluru and delivered to your door.",
 };
+
 
 /* ── Layout ───────────────────────────────────────────────────────────────── */
 

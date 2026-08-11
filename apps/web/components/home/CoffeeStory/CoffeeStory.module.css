@@ -1,0 +1,125 @@
+/**
+ * CoffeeStory.module.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Editorial storytelling section — large visual + narrative copy split.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+.section {
+  --home-accent: var(--artha-palette-warning-500);
+}
+
+/* ── Two-column editorial split ────────────────────────────────────────────── */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--artha-space-16);
+  align-items: center;
+}
+
+/* ── Visual column ─────────────────────────────────────────────────────────── */
+
+.visualColumn {
+  position: relative;
+}
+
+.imageArea {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--artha-color-surface-raised);
+  border: 1px solid var(--artha-color-border-subtle);
+  overflow: hidden;
+}
+
+/* Large placeholder mark — communicates editorial photography zone */
+.imageArea::before {
+  content: "—";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--artha-text-display-2xl);
+  font-weight: var(--artha-font-weight-bold);
+  color: var(--artha-color-border-default);
+  letter-spacing: -0.05em;
+}
+
+/* Caption strip below image */
+.caption {
+  margin-top: var(--artha-space-4);
+  font-size: var(--artha-text-label-sm);
+  letter-spacing: var(--artha-tracking-wider);
+  text-transform: uppercase;
+  color: var(--artha-color-text-tertiary);
+}
+
+/* ── Narrative column ──────────────────────────────────────────────────────── */
+
+.narrativeColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-8);
+}
+
+.eyebrow {
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-widest);
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.heading {
+  font-size: var(--artha-text-heading-xl);
+  font-weight: var(--artha-font-weight-semibold);
+  line-height: var(--artha-leading-snug);
+  letter-spacing: var(--artha-tracking-tight);
+  color: var(--artha-color-text-primary);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-5);
+}
+
+.paragraph {
+  font-size: var(--artha-text-body-lg);
+  line-height: var(--artha-leading-relaxed);
+  color: var(--artha-color-text-secondary);
+}
+
+/* Horizontal rule — editorial punctuation */
+.rule {
+  width: var(--artha-space-10);
+  height: 1px;
+  background-color: var(--home-accent);
+  opacity: var(--artha-opacity-40);
+  border: none;
+}
+
+.cta {
+  margin-top: var(--artha-space-2);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--artha-space-10);
+  }
+
+  .imageArea {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 639px) {
+  .split {
+    gap: var(--artha-space-8);
+  }
+}

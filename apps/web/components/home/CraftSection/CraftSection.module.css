@@ -1,0 +1,118 @@
+/**
+ * CraftSection.module.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Editorial craft/quality section — three principles, not a feature grid.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+.section {
+  --home-accent: var(--artha-palette-warning-500);
+  background-color: var(--artha-color-bg-subtle);
+}
+
+/* ── Section header ────────────────────────────────────────────────────────── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-3);
+  margin-bottom: var(--artha-space-16);
+  max-width: 52ch;
+}
+
+.eyebrow {
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-widest);
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.heading {
+  font-size: var(--artha-text-heading-xl);
+  font-weight: var(--artha-font-weight-semibold);
+  line-height: var(--artha-leading-snug);
+  letter-spacing: var(--artha-tracking-tight);
+  color: var(--artha-color-text-primary);
+}
+
+/* ── Principles list ───────────────────────────────────────────────────────── */
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+/* ── Principle item ────────────────────────────────────────────────────────── */
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-5);
+  padding: var(--artha-space-10) var(--artha-space-8);
+  border-left: 1px solid var(--artha-color-border-subtle);
+}
+
+.principle:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.principle:last-child {
+  padding-right: 0;
+}
+
+/* Number marker — editorial, not decorative */
+.number {
+  font-size: var(--artha-text-label-sm);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-widest);
+  font-family: var(--artha-font-mono);
+  color: var(--home-accent);
+}
+
+.principleHeading {
+  font-size: var(--artha-text-heading-md);
+  font-weight: var(--artha-font-weight-semibold);
+  line-height: var(--artha-leading-snug);
+  color: var(--artha-color-text-primary);
+}
+
+.principleBody {
+  font-size: var(--artha-text-body-md);
+  line-height: var(--artha-leading-relaxed);
+  color: var(--artha-color-text-secondary);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .principle {
+    border-left: none;
+    border-top: 1px solid var(--artha-color-border-subtle);
+    padding: var(--artha-space-8) 0;
+  }
+
+  .principle:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .principle:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .header {
+    margin-bottom: var(--artha-space-10);
+  }
+  .principle {
+    padding: var(--artha-space-6) 0;
+  }
+}

@@ -1,15 +1,21 @@
 /**
- * Home — root placeholder page.
+ * Homepage — TASK-009: Structural Composition
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Renders the Artha homepage section sequence.
+ * Each section is a standalone server component replaceable by a future ticket.
  *
- * ⚠ This is a structural placeholder only.
- *   The real homepage will be implemented in a dedicated ticket.
+ * Server Component — no "use client".
+ * ─────────────────────────────────────────────────────────────────────────────
  */
-import styles from "./page.module.css";
+import type { Metadata } from "next";
+import { HomePage } from "../components/home/HomePage";
+
+export const metadata: Metadata = {
+  title: "Artha | Specialty Coffee, Roasted to Order",
+  description:
+    "Premium specialty coffee sourced directly from single-origin farms in Ethiopia, Colombia, and India. Roasted fresh and delivered to your door.",
+};
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <p className={styles.status}>Artha — project foundation active.</p>
-    </div>
-  );
+  return <HomePage />;
 }

@@ -1,0 +1,85 @@
+/**
+ * NewsletterSection.module.css
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Centered newsletter / community section.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+.section {
+  --home-accent: var(--artha-palette-warning-500);
+}
+
+/* ── Centered content block ────────────────────────────────────────────────── */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--artha-space-6);
+}
+
+.eyebrow {
+  font-size: var(--artha-text-label-md);
+  font-weight: var(--artha-font-weight-medium);
+  letter-spacing: var(--artha-tracking-widest);
+  text-transform: uppercase;
+  color: var(--home-accent);
+}
+
+.heading {
+  font-size: var(--artha-text-heading-xl);
+  font-weight: var(--artha-font-weight-semibold);
+  line-height: var(--artha-leading-snug);
+  letter-spacing: var(--artha-tracking-tight);
+  color: var(--artha-color-text-primary);
+  max-width: 24ch;
+}
+
+.description {
+  font-size: var(--artha-text-body-lg);
+  line-height: var(--artha-leading-relaxed);
+  color: var(--artha-color-text-secondary);
+  max-width: 48ch;
+}
+
+/* ── Form ──────────────────────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--artha-space-4);
+  width: 100%;
+  margin-top: var(--artha-space-4);
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--artha-space-3);
+  width: 100%;
+  max-width: 480px;
+}
+
+.inputWrap {
+  flex: 1;
+}
+
+.disclaimer {
+  font-size: var(--artha-text-label-sm);
+  color: var(--artha-color-text-tertiary);
+  text-align: center;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 639px) {
+  .inputRow {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .inputRow > button {
+    width: 100%;
+  }
+}
