@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider, AppShell } from "@repo/ui";
-import { HeaderPlaceholder } from "../components/layout/HeaderPlaceholder";
+import { SiteHeader } from "../components/layout/SiteHeader/SiteHeader";
 import { FooterPlaceholder } from "../components/layout/FooterPlaceholder";
 import "./globals.css";
 
@@ -39,7 +39,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <ThemeProvider defaultTheme="dark">
           <AppShell
-            header={<HeaderPlaceholder />}
+            header={<SiteHeader />}
             footer={<FooterPlaceholder />}
           >
             {children}

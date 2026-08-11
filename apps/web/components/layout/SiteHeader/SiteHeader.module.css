@@ -1,0 +1,221 @@
+/* SiteHeader.module.css */
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: var(--artha-z-sticky);
+  transition: background-color var(--artha-duration-normal) var(--artha-ease-standard),
+              border-color var(--artha-duration-normal) var(--artha-ease-standard),
+              padding var(--artha-duration-normal) var(--artha-ease-standard);
+  /* The transition allows smooth shrinking of padding or color change */
+}
+
+/* State 1: Top of page */
+.top {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  padding: var(--artha-space-4) 0;
+}
+
+/* State 2: Scrolled */
+.scrolled {
+  background-color: var(--artha-color-bg-base);
+  border-bottom: 1px solid var(--artha-color-border-subtle);
+  padding: var(--artha-space-2) 0;
+  
+  /* Subtle blur for glassmorphism */
+  backdrop-filter: blur(var(--artha-blur-md));
+  -webkit-backdrop-filter: blur(var(--artha-blur-md));
+  
+  /* Make the background slightly transparent so the blur shows through */
+  /* Fallback relies on bg-base */
+  background-color: color-mix(in srgb, var(--artha-color-bg-base) 90%, transparent);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px; /* ensures a minimum touch target height */
+}
+
+/* ── Logo ── */
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2);
+  text-decoration: none;
+  border-radius: var(--artha-radius-md);
+  padding: var(--artha-space-1);
+  margin-left: calc(var(--artha-space-1) * -1);
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--artha-color-brand);
+  outline-offset: 2px;
+}
+
+.logoText {
+  font-family: var(--artha-font-sans);
+  font-weight: var(--artha-font-weight-bold);
+  font-size: var(--artha-text-body-lg);
+  color: var(--artha-color-text-primary);
+}
+
+/* ── Desktop Nav ── */
+
+.desktopNav {
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-body-sm);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-secondary);
+  text-decoration: none;
+  transition: color var(--artha-duration-fast) var(--artha-ease-standard);
+  padding: var(--artha-space-2) 0;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--artha-color-text-primary);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--artha-color-brand);
+  outline-offset: 4px;
+  border-radius: var(--artha-radius-sm);
+}
+
+.activeNavLink {
+  color: var(--artha-color-text-primary);
+}
+
+.activeNavLink::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--artha-color-text-primary);
+  border-radius: var(--artha-radius-full);
+}
+
+/* ── Utilities ── */
+
+.utilities {
+  display: flex;
+  align-items: center;
+  gap: var(--artha-space-2);
+}
+
+.desktopUtilities {
+  display: none;
+  align-items: center;
+  gap: var(--artha-space-2);
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--artha-radius-full);
+}
+
+.mobileMenuBtn {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--artha-radius-full);
+}
+
+/* ── Mobile Drawer ── */
+
+.mobileDrawerContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: var(--artha-space-6);
+  gap: var(--artha-space-8);
+}
+
+.mobileNavLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-2);
+}
+
+.mobileNavLink {
+  display: block;
+  font-family: var(--artha-font-sans);
+  font-size: var(--artha-text-body-lg);
+  font-weight: var(--artha-font-weight-medium);
+  color: var(--artha-color-text-secondary);
+  text-decoration: none;
+  padding: var(--artha-space-3) var(--artha-space-4);
+  border-radius: var(--artha-radius-md);
+  transition: all var(--artha-duration-fast) var(--artha-ease-standard);
+}
+
+.mobileNavLink:active {
+  background-color: var(--artha-color-bg-subtle);
+}
+
+.activeMobileNavLink {
+  color: var(--artha-color-text-primary);
+  background-color: var(--artha-color-bg-subtle);
+  font-weight: var(--artha-font-weight-semibold);
+}
+
+.mobileUtilities {
+  display: flex;
+  flex-direction: column;
+  gap: var(--artha-space-3);
+  padding: 0 var(--artha-space-4);
+  margin-top: auto;
+  margin-bottom: var(--artha-space-6);
+}
+
+.mobileUtilityBtn {
+  justify-content: flex-start;
+}
+
+/* ── Media Queries ── */
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: block;
+  }
+  
+  .desktopUtilities {
+    display: flex;
+  }
+  
+  .mobileMenuBtn {
+    display: none;
+  }
+}
